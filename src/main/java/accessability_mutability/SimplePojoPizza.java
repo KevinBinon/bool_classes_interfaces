@@ -1,5 +1,10 @@
 package accessability_mutability;
 
+import builder.PizzaBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class SimplePojoPizza {
 //    Create a pizza class it should have a name, price, list with toppings, ...
 //    Make this class restrict accessability as much as possible
@@ -7,10 +12,12 @@ public class SimplePojoPizza {
 
     private String name;
     private double price;
-    private String[] toppings;
+    private List<String> toppings;
 
-    public SimplePojoPizza(String name, double price, String[] toppings) {
+    public SimplePojoPizza() {
+    }
 
+    public SimplePojoPizza(String name, double price, List<String> toppings) {
         this.name = name;
         this.price = price;
         this.toppings = toppings;
@@ -32,11 +39,23 @@ public class SimplePojoPizza {
         this.price = price;
     }
 
-    public String[] getToppings() {
+    public List<String> getToppings() {
         return toppings;
     }
 
-    public void setToppings(String[] toppings) {
+    public void setToppings(List<String> toppings) {
         this.toppings = toppings;
     }
+
+    @Override
+    public String toString() {
+        return "this is a pizza "+getName()+" with following ingredients "+getToppings();
+    }
+
+    public static void main(String[] args) {
+        PizzaBuilder pizzaBuilder=new PizzaBuilder();
+        SimplePojoPizza a= pizzaBuilder.withName("Margheritta").withPrice(10.0).withToppings("a","b").build();
+        System.out.println(a.toString());
+    }
 }
+
