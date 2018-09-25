@@ -1,8 +1,10 @@
 package inheritance;
 
+import accessability_mutability.SimplePojoPizza;
+
 import java.util.List;
 
-public class MyFavouritePizza extends AbstractPojoPizza {
+public class MyFavouritePizza extends SimplePojoPizza {
 
     private String sauce;
 
@@ -20,3 +22,5 @@ public class MyFavouritePizza extends AbstractPojoPizza {
         this.sauce = sauce;
     }
 }
+
+//Apply different types of inheritance (single, multiple, multilevel, hierarchical, hybrid)

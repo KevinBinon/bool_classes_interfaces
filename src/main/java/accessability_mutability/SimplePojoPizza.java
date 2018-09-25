@@ -10,9 +10,9 @@ public class SimplePojoPizza {
 //    Make this class restrict accessability as much as possible
 //    Make this class immutable
 
-    private String name;
-    private double price;
-    private List<String> toppings;
+    public String name;
+    public double price;
+    public List<String> toppings;
 
     public SimplePojoPizza() {
     }
@@ -49,12 +49,12 @@ public class SimplePojoPizza {
 
     @Override
     public String toString() {
-        return "this is a pizza "+getName()+" with following ingredients "+getToppings();
+        return "this is a pizza " + getName() + " with following ingredients " + getToppings();
     }
 
     public static void main(String[] args) {
-        PizzaBuilder pizzaBuilder=new PizzaBuilder();
-        SimplePojoPizza a= pizzaBuilder.withName("Margheritta").withPrice(10.0).withToppings("a","b").build();
+        PizzaBuilder pizzaBuilder = new PizzaBuilder();
+        SimplePojoPizza a = pizzaBuilder.withName("Margheritta").withPrice(10.0).withToppings("a", "b").build();
         System.out.println(a.toString());
     }
 }
